@@ -6,9 +6,10 @@ SRC=out/what_if_the_moon_fell_to_earth.mp4
 mkdir -p out/keep
 keep() { a=$1; b=$2; f=$(printf "out/keep/keep_%05d_%05d.mp4" $a $b); [ -f "$f" ] && return;
   ffmpeg -v error -y -ss $(python3 -c "print($a/30)") -i $SRC -frames:v $((b-a)) -an -c:v libx264 -preset veryfast -crf 14 -pix_fmt yuv420p -r 30 "$f"; }
+[ -f out/fp/seg_07860_08910.mp4 ] || ffmpeg -v error -y -i out/fp/seg_07860_09400.mp4 -frames:v 1050 -c copy out/fp/seg_07860_08910.mp4
 keep 1380 4200; keep 5880 7860; keep 10950 12900; keep 14040 15150; keep 16230 18360
 : > out/splice_list.txt
-for seg in fp/seg_00000_01380 keep/keep_01380_04200 fp/seg_04200_05880 keep/keep_05880_07860 fp/seg_07860_09400 fp/seg_09400_10950 keep/keep_10950_12900 fp/seg_12900_14040 keep/keep_14040_15150 fp/seg_15150_16230 keep/keep_16230_18360 fp/seg_18360_20040; do
+for seg in fp/seg_00000_01380 keep/keep_01380_04200 fp/seg_04200_05880 keep/keep_05880_07860 fp/seg_07860_08910 fp/seg_08910_09155 fp/seg_09155_09400 fp/seg_09400_10950 keep/keep_10950_12900 fp/seg_12900_14040 keep/keep_14040_15150 fp/seg_15150_16230 keep/keep_16230_18360 fp/seg_18360_20040; do
   n=$(ffprobe -v error -count_frames -select_streams v:0 -show_entries stream=nb_read_frames -of csv=p=0 out/$seg.mp4); echo "$seg $n frames" >&2
   echo "file '$seg.mp4'" >> out/splice_list.txt
 done
