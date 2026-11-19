@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { clamp, lerp, sstep, easeIO, rng, distKm, speedKms, sizeX, tidalX, T_IMPACT_H } from './util.js';
 import { City } from './city.js';
+import { Arms, headMotion } from './fps.js';
 import { Space } from './space.js';
 import { SHOTS, CAPTIONS, CHAPTERS, DURATION } from './timeline.js';
 
@@ -41,7 +42,8 @@ const compCam = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
 
 const city = new City();
 const space = new Space(city.tex.moon);
-const camera = new THREE.PerspectiveCamera(55, W / H, 0.5, 30000);
+const camera = new THREE.PerspectiveCamera(55, W / H, 0.3, 30000);
+const arms = new Arms();
 const scam = new THREE.PerspectiveCamera(40, W / H, 0.05, 20000);
 
 // ---------- precomputed overlay assets ----------
@@ -231,11 +233,18 @@ export function renderFrame(i) {
     const sh = st.shake || 0;
     const R = (k) => Math.sin(t * (13 + k * 7.3) + k) * Math.sin(t * (5.1 + k * 3.1));
     camera.position.set(c.p[0] + R(1) * sh * 0.35, c.p[1] + R(2) * sh * 0.3, c.p[2] + R(3) * sh * 0.2);
+    if (st.eyeMin !== undefined) camera.position.y = Math.max(camera.position.y, st.eyeMin);
     camera.lookAt(c.l[0], c.l[1], c.l[2]);
+    if (st.fp) { // first-person head motion in camera space
+      const hm = headMotion(st.fp, lt);
+      camera.translateX(hm.x); camera.translateY(hm.y); camera.translateZ(hm.z);
+      camera.rotateX(hm.pitch); camera.rotateY(hm.yaw); camera.rotateZ(hm.roll);
+    }
     camera.rotateZ((c.roll || 0) + R(4) * sh * 0.012);
     camera.fov = c.fov; camera.updateProjectionMatrix();
     let q0 = performance.now(); city.update(st, t, camera); PROF.update += performance.now() - q0;
     q0 = performance.now(); renderer.setRenderTarget(rt); renderer.render(city.scene, camera); PROF.render += performance.now() - q0;
+    if (arms.update(st.arms, camera, city, lt)) { renderer.autoClear = false; renderer.clearDepth(); renderer.render(arms.scene, arms.cam); renderer.autoClear = true; }
   } else if (shot.scene === 'space') {
     const c = camAt(shot.cam, u);
     const sh = st.shake || 0;

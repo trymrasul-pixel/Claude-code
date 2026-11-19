@@ -280,6 +280,35 @@ place(sfx, (np.sin(2 * np.pi * 6200 * tt) * 0.02 * np.exp(-tt / 3)).astype(np.fl
 amb[0] += fftfilt(brown(901), hi=90) * 1.6 * shot_env(['aftermath', 'origin'], 3)
 amb[1] += fftfilt(brown(902), hi=90) * 1.6 * shot_env(['aftermath', 'origin'], 3)
 
+# ---------- first-person: footsteps, splashes, breathing ----------
+walkA, runA, wadeA, panicA = curve('walk'), curve('run'), curve('wade'), curve('panic')
+def footstep(kind, seed):
+    r = np.random.default_rng(seed)
+    if kind == 'wade':
+        n = int(0.7 * SR); tt = np.arange(n) / SR; nz = r.standard_normal(n)
+        return (fftfilt_short(nz, lo=300, hi=4000) * np.exp(-tt * 5) * np.minimum(1, tt / 0.05) * 0.6).astype(np.float32)
+    n = int(0.22 * SR); tt = np.arange(n) / SR; nz = r.standard_normal(n)
+    thud = np.sin(2 * np.pi * (70 + 20 * r.random()) * tt) * np.exp(-tt * 40)
+    scuff = fftfilt_short(nz, lo=900, hi=6000) * np.exp(-tt * 28) * 0.5
+    grit = fftfilt_short(nz, lo=200, hi=1200) * np.exp(-tt * 35) * 0.6
+    return ((thud * 0.9 + scuff + grit) * (1.4 if kind == 'run' else 1.0)).astype(np.float32)
+for s_ in shots:
+    if s_['scene'] != 'city': continue
+    a0, a1 = s_['t0'], s_['t1']
+    for kind, A, sps in (('walk', walkA, 1.85), ('run', runA, 2.7), ('wade', wadeA, 0.85)):
+        k = 0
+        while True:
+            k += 1; ts = a0 + k / sps
+            if ts >= a1: break
+            g = float(A[min(N - 1, int(ts * SR))])
+            if g > 0.15: place(sfx, footstep(kind, int(ts * 1000)), ts + (np.random.default_rng(k).random() - 0.5) * 0.02, 0.22 * g * (0.85 + 0.3 * np.random.default_rng(k + 7).random()))
+# heavy breathing when running / panicking
+breath_rate = 0.45 + 0.5 * np.clip(runA, 0, 1)
+bph = np.cumsum(breath_rate) / SR
+bcyc = 0.5 - 0.5 * np.cos(2 * np.pi * bph)
+breath = fftfilt(noise(555), lo=400, hi=2600) * (bcyc ** 3) * 0.05 * np.clip(runA * 1.0 + panicA * 0.6, 0, 1.6)
+amb[0] += breath; amb[1] += breath
+
 sil = env_lin([(0, 1), (540.4, 1), (541.0, 0.0), (547, 0.0), (550, 1), (668, 1)])
 L = (music_L * 0.9 + (amb[0] + sfx) * sil)
 R = (music_R * 0.9 + (amb[1] + sfx) * sil)

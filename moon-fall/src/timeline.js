@@ -13,13 +13,15 @@ const shot = (name, t0, t1, scene, o = {}) => SHOTS.push({ name, t0, t1, scene, 
 shot('open', 0, 46, 'city', {
   T: [0, 46 / 3600], fadeIn: 2.5, sub: 'orbit', sfx: 'night',
   cam: [
-    { u: 0, p: [-9.5, 5, 70], l: [0, 9, -400], fov: 52 },
-    { u: 0.42, p: [-8.5, 5, 46], l: [0, 22, -400], fov: 52 },
-    { u: 0.62, p: [-7.5, 4.6, 34], l: [0, 400, -120], fov: 46 },
-    { u: 1, p: [-7, 4.4, 30], l: [0, 420, -112], fov: 38 },
+    { u: 0, p: [-9.3, 3.65, 84], l: [-3, 4.5, -300], fov: 58 },
+    { u: 0.3, p: [-9.3, 3.65, 63], l: [-6, 4.0, -300], fov: 58 },
+    { u: 0.57, p: [-9.3, 3.65, 44], l: [0, 6, -300], fov: 58 },
+    { u: 0.7, p: [-9.2, 3.65, 43.4], l: [0, 400, -120], fov: 54 },
+    { u: 1, p: [-9.2, 3.65, 43.1], l: [0, 420, -112], fov: 46 },
   ],
   st: (u, lt) => ({ tod: 0.0, moonDir: dirEl(0, 74), crowd: { mode: 'walk', density: 0.45 }, traffic: 0.8, water: { level: 0, amp: 0.35 },
-    orbitSpeed: lerp(1.02, 0, sstep(29.5, 32, lt)), clock2: lt > 31 ? 'T + 0 MIN' : null, moonBright: 1 }),
+    orbitSpeed: lerp(1.02, 0, sstep(29.5, 32, lt)), clock2: lt > 31 ? 'T + 0 MIN' : null, moonBright: 1,
+    fp: { walk: 1 - sstep(24, 27, lt) } }),
 });
 shot('title', 46, 54, 'space', {
   hud: false, fadeIn: 1.0, fadeOut: 0.6, sfx: 'title',
@@ -57,18 +59,19 @@ shot('graph', 100, 140, 'graph', {
 // ───────────── CHAPTER 2 · NOBODY NOTICES ─────────────
 shot('day1a', 140, 160, 'city', {
   T: [10.0, 10.2], fadeIn: 1.0, sfx: 'day',
-  cam: [{ u: 0, p: [-10.5, 10, 140], l: [2, 4, -200], fov: 52 }, { u: 1, p: [-9.5, 9.4, 112], l: [1, 4.5, -200], fov: 52 }],
-  st: () => ({ moonVisible: false, crowd: { mode: 'walk', density: 1 }, traffic: 1, water: { level: 0.2, amp: 0.3 } }),
+  cam: [{ u: 0, p: [-9.3, 3.65, 152], l: [-2, 4, -200], fov: 58 }, { u: 0.55, p: [-9.3, 3.65, 136], l: [6, 7, 60], fov: 58 }, { u: 1, p: [-9.3, 3.65, 124], l: [0, 4.5, -200], fov: 58 }],
+  st: (u, lt) => ({ moonVisible: false, crowd: { mode: 'walk', density: 1 }, traffic: 1, water: { level: 0.2, amp: 0.3 }, fp: { walk: 1 } }),
 });
 shot('day1b', 160, 178, 'city', {
   T: [16.5, 16.8], sfx: 'beach', fadeOut: 0.8,
-  cam: [{ u: 0, p: [-60, 4.2, -40], l: [20, 2, -220], fov: 50 }, { u: 1, p: [-48, 4.2, -40], l: [30, 2, -220], fov: 50 }],
-  st: () => ({ moonVisible: false, crowd: { mode: 'walk', density: 1 }, traffic: 1, water: { level: 0.3, amp: 0.35 } }),
+  cam: [{ u: 0, p: [-52, 3.65, -38.6], l: [-30, -14, -120], fov: 56 }, { u: 0.55, p: [-52, 3.65, -38.8], l: [-28, -13, -120], fov: 56 }, { u: 0.78, p: [-52, 3.65, -39], l: [20, 3, -260], fov: 56 }, { u: 1, p: [-52, 3.65, -39.1], l: [30, 3.5, -260], fov: 56 }],
+  st: (u, lt) => ({ moonVisible: false, crowd: { mode: 'walk', density: 1 }, traffic: 1, water: { level: 0.3, amp: 0.35 }, fp: { walk: 0 },
+    arms: { pose: 'phone', amt: 1 - sstep(0.58, 0.72, u), sleeve: '#a33b2f' } }),
 });
 shot('night2', 178, 196, 'city', {
   T: [44.0, 44.25], fadeIn: 1.0, sfx: 'nightcrowd',
-  cam: [{ u: 0, p: [-14, 4.4, -26], l: [4, 120, -500], fov: 44 }, { u: 1, p: [-9, 4.4, -29], l: [4, 120, -500], fov: 40 }],
-  st: (u, lt, b) => ({ moonDir: dirEl(4, 18), moonBright: bright(b.T), moonK: 3.4, crowd: { mode: 'watch', density: 1 }, traffic: 0.6, water: { level: 0.6, amp: 0.45 } }),
+  cam: [{ u: 0, p: [-13, 3.65, -35.8], l: [-40, 3, -200], fov: 54 }, { u: 0.3, p: [-12.5, 3.65, -36], l: [4, 110, -500], fov: 50 }, { u: 1, p: [-11.5, 3.65, -36.2], l: [4, 122, -500], fov: 46 }],
+  st: (u, lt, b) => ({ moonDir: dirEl(4, 18), moonBright: bright(b.T), moonK: 3.4, crowd: { mode: 'watch', density: 1 }, traffic: 0.6, water: { level: 0.6, amp: 0.45 }, fp: { walk: 0 } }),
 });
 shot('night2b', 196, 215, 'city', {
   T: [46.0, 46.3], sfx: 'nightcrowd', fadeOut: 1.0,
@@ -86,18 +89,20 @@ shot('tide', 215, 262, 'city', {
 });
 shot('flood', 262, 320, 'city', {
   T: [100.0, 104.0], sub: 'tide', sfx: 'flood', fadeOut: 0.0,
-  cam: [{ u: 0, p: [-3, 6.5, -26], l: [0, 34, 400], fov: 50 }, { u: 0.6, p: [-2, 6.5, -6], l: [0, 40, 400], fov: 50 }, { u: 1, p: [-1.5, 6.6, 4], l: [0, 34, 400], fov: 54 }],
+  cam: [{ u: 0, p: [-3, 0, -26], l: [0, 30, 400], fov: 56 }, { u: 0.6, p: [-2, 0, -8], l: [-10, 36, 400], fov: 56 }, { u: 0.8, p: [-1.8, 0, -4], l: [60, 14, 120], fov: 58 }, { u: 1, p: [-1.5, 0, 0], l: [0, 30, 400], fov: 58 }],
   st: (u, lt, b) => ({ tod: 4 + u * 4, moonDir: dirEl(178, lerp(14, 4, u)), moonBright: bright(b.T), moonK: 3.2,
     water: { level: lerp(3.4, 5.4, u), amp: 0.7 }, muddy: 0.55, crowd: { mode: 'none' }, traffic: 0, sweep: u * 0.5,
-    power: lt < 44 ? 1 : 0, flicker: lt > 40 && lt < 46, shake: sstep(44, 48, lt) * 0.9 * (1 - sstep(54, 58, lt) * 0.5), quake: sstep(44, 48, lt), wind: 0.3, dust: sstep(46, 52, lt) * 0.25 }),
+    power: lt < 44 ? 1 : 0, flicker: lt > 40 && lt < 46, shake: sstep(44, 48, lt) * 0.9 * (1 - sstep(54, 58, lt) * 0.5), quake: sstep(44, 48, lt), wind: 0.3, dust: sstep(46, 52, lt) * 0.25,
+    eyeMin: lerp(3.4, 5.4, u) + 1.25, fp: { wade: 1 - sstep(0.62, 0.7, u) * 0.85, panic: sstep(44, 48, lt) } }),
 });
 
 // ───────────── CHAPTER 4 · BREAKING POINT ─────────────
 shot('quake', 320, 365, 'city', {
   T: [108.6, 109.4], sfx: 'quake', fadeIn: 0.6,
-  cam: [{ u: 0, p: [-4, 5, 180], l: [0, 12, -200], fov: 54 }, { u: 1, p: [-3, 5, 150], l: [0, 14, -200], fov: 56 }],
+  cam: [{ u: 0, p: [-4, 3.65, 176], l: [0, 10, -200], fov: 60 }, { u: 0.2, p: [-4, 3.65, 176.5], l: [40, 26, 200], fov: 60 }, { u: 0.32, p: [-4, 3.65, 179], l: [-2, 7, 700], fov: 62 }, { u: 1, p: [-3, 3.65, 300], l: [0, 6, 800], fov: 64 }],
   st: (u, lt) => ({ tod: 12.6 + u * 0.8, moonVisible: false, chaos: 0.35, water: { level: -2.5, amp: 0.8 }, crowd: { mode: 'run', density: 0.5, t0: 300, speed: 1 }, traffic: 0,
-    shake: 0.7 + 0.6 * Math.max(0, Math.sin(lt * 0.5)), quake: 1, cracks: sstep(2, 12, lt), collapse: sstep(8, 44, lt) * 0.75, dust: 0.25 + sstep(10, 30, lt) * 0.5, debris: sstep(14, 30, lt) * 0.25, wind: 0.4, power: 0 }),
+    shake: 0.7 + 0.6 * Math.max(0, Math.sin(lt * 0.5)), quake: 1, cracks: sstep(2, 12, lt), collapse: sstep(8, 44, lt) * 0.75, dust: 0.25 + sstep(10, 30, lt) * 0.5, debris: sstep(14, 30, lt) * 0.25, wind: 0.4, power: 0,
+    fp: { run: sstep(0.28, 0.36, u), panic: 1 }, arms: { pose: 'run', amt: sstep(0.3, 0.38, u), sleeve: '#3a4a3a' } }),
 });
 shot('moonrise', 365, 430, 'city', {
   T: [113.9, 114.4], sfx: 'moonrise',
@@ -110,10 +115,11 @@ shot('moonrise', 365, 430, 'city', {
 // ───────────── CHAPTER 5 · THE ROCHE LIMIT ─────────────
 shot('roche', 430, 468, 'city', {
   T: [115.21, 115.40], sfx: 'roche', fadeIn: 0.8,
-  cam: [{ u: 0, p: [-2, 7, 40], l: [0, 120, -400], fov: 62 }, { u: 1, p: [-1, 6.6, 22], l: [0, 150, -400], fov: 64 }],
+  cam: [{ u: 0, p: [-2, 3.65, 40], l: [0, 120, -400], fov: 62 }, { u: 0.5, p: [-1.6, 3.65, 36], l: [8, 135, -400], fov: 63 }, { u: 1, p: [-1.2, 3.65, 33], l: [0, 150, -400], fov: 64 }],
   st: (u, lt, b) => ({ tod: 19.25 + u * 0.15, moonDir: dirEl(0, lerp(16, 20, u)), moonBright: bright(b.T), moonK: 1.9, chaos: 0.2,
     moonHeat: sstep(0.25, 0.7, u), moonSep: sstep(0.35, 1, u) * 0.06, haloMul: 0.8,
-    water: { level: 7, amp: 2.0 }, muddy: 0.5, crowd: { mode: 'none' }, traffic: 0, sweep: 1, collapse: 0.8, dust: 0.3, wind: 0.85, debris: 0.6, shake: 0.5, quake: 0.6, power: 0 }),
+    water: { level: 1.2, amp: 2.0 }, muddy: 0.5, crowd: { mode: 'none' }, traffic: 0, sweep: 1, collapse: 0.8, dust: 0.3, wind: 0.85, debris: 0.6, shake: 0.5, quake: 0.6, power: 0,
+    fp: { walk: (u < 0.5 ? 0.35 : 0.2), panic: 1, breath: 1.6 } }),
 });
 shot('roche-space', 468, 505, 'space', {
   T: [115.40, 115.53], sfx: 'space-break', fadeIn: 0.6,
@@ -124,11 +130,12 @@ shot('roche-space', 468, 505, 'space', {
 // ───────────── CHAPTER 6 · IMPACT ─────────────
 shot('impact', 505, 541, 'city', {
   T: [115.54, T_IMPACT_H - 0.0008], sfx: 'impact', fadeIn: 0.5,
-  cam: [{ u: 0, p: [-2, 6.6, 26], l: [0, 160, -400], fov: 66 }, { u: 1, p: [-1, 6.2, 12], l: [0, 230, -400], fov: 72 }],
+  cam: [{ u: 0, p: [-1.2, 3.65, 33], l: [0, 160, -400], fov: 66 }, { u: 1, p: [-1, 3.65, 31], l: [0, 230, -400], fov: 72 }],
   st: (u, lt, b) => ({ tod: 19.55, moonDir: dirEl(0, 24), moonBright: 30, moonK: 1.0, moonScale: lerp(1.25, 1.9, u), chaos: 0.55, skyFire: sstep(0.05, 0.7, u) * 0.85,
     moonHeat: 1, moonSep: lerp(1.0, 2.2, u), moonGlow: lerp(0.7, 1.5, u), moonDisk: 0.55, haloMul: 0.6,
     meteors: sstep(0.0, 0.5, u), horizonFlashes: sstep(0.15, 0.7, u), horizonY: 590, heatHaze: sstep(0.5, 1, u) * 0.6,
-    water: { level: 7, amp: 2.4 }, muddy: 0.5, crowd: { mode: 'none' }, traffic: 0, sweep: 1, collapse: 0.85, dust: 0.35, dustColor: '#7a4a30', wind: 1, debris: 0.8,
+    water: { level: 1.2, amp: 2.4 }, muddy: 0.5, crowd: { mode: 'none' }, traffic: 0, sweep: 1, collapse: 0.85, dust: 0.35, dustColor: '#7a4a30', wind: 1, debris: 0.8,
+    fp: { panic: 1.4, breath: 2 }, arms: { pose: 'shield', amt: sstep(0.62, 0.78, u), sleeve: '#3a3530', glow: lerp(0.3, 1.1, u), glowColor: '#ff9a50' },
     shake: lerp(0.5, 1.6, u), quake: 1, power: 0, flash: sstep(0.94, 1, u) * 0.7, white: sstep(0.95, 1, u) }),
 });
 shot('white', 541, 549, 'black', {
@@ -149,8 +156,9 @@ shot('origin', 587, 612, 'space', {
 // ───────────── EPILOGUE ─────────────
 shot('calm', 612, 668, 'city', {
   T: [0, 0], sub: 'away', fadeIn: 2.5, fadeOut: 3.0, sfx: 'calm', hudFadeOut: true,
-  cam: [{ u: 0, p: [-16, 4.4, -24], l: [4, 70, -500], fov: 46 }, { u: 1, p: [-8, 4.4, -29], l: [4, 76, -500], fov: 44 }],
-  st: (u, lt) => ({ tod: 21.5, moonDir: dirEl(4, 22), moonBright: 1, moonK: 3.6, crowd: { mode: 'watch', density: 0.6 }, traffic: 0.6, water: { level: 0.4, amp: 0.35 }, clock: 'TONIGHT', hudAlpha: 1 - sstep(24, 26, lt) }),
+  cam: [{ u: 0, p: [-34, 3.65, -35.8], l: [40, 6, -60], fov: 56 }, { u: 0.4, p: [-16, 3.65, -35.8], l: [10, 40, -500], fov: 54 }, { u: 1, p: [-14.5, 3.65, -36], l: [4, 76, -500], fov: 50 }],
+  st: (u, lt) => ({ tod: 21.5, moonDir: dirEl(4, 22), moonBright: 1, moonK: 3.6, crowd: { mode: 'watch', density: 0.6 }, traffic: 0.6, water: { level: 0.4, amp: 0.35 }, clock: 'TONIGHT', hudAlpha: 1 - sstep(24, 26, lt),
+    fp: { walk: 1 - sstep(0.36, 0.44, u) } }),
 });
 
 export const DURATION = 668;
