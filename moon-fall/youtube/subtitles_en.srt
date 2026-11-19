@@ -1,0 +1,396 @@
+1
+00:00:03,000 --> 00:00:07,500
+It is midnight in a quiet city by the sea.
+
+2
+00:00:08,000 --> 00:00:12,500
+Above you, the Moon is 384,400 kilometers away.
+
+3
+00:00:13,000 --> 00:00:17,500
+It is racing sideways at one kilometer per second.
+
+4
+00:00:18,000 --> 00:00:22,500
+That speed is the only thing keeping it in the sky.
+
+5
+00:00:23,000 --> 00:00:27,500
+It is always falling toward us… and always missing.
+
+6
+00:00:28,500 --> 00:00:32,500
+Now imagine that, tonight, it simply stops.
+
+7
+00:00:33,500 --> 00:00:37,500
+No sideways motion. Nothing left to miss with.
+
+8
+00:00:38,500 --> 00:00:42,000
+There is only one way left for it to go.
+
+9
+00:00:43,000 --> 00:00:45,800
+Down.
+
+10
+00:01:00,000 --> 00:01:04,500
+This is the Earth and the Moon, drawn to scale.
+
+11
+00:01:05,000 --> 00:01:10,000
+You could line up thirty Earths in the gap between them.
+
+12
+00:01:10,500 --> 00:01:15,000
+Normally, the Moon travels around this circle once a month.
+
+13
+00:01:15,500 --> 00:01:20,000
+But if its orbital speed suddenly dropped to zero…
+
+14
+00:01:20,500 --> 00:01:25,000
+…it would fall straight toward us, along this line.
+
+15
+00:01:26,000 --> 00:01:31,000
+By the end of the first hour, it is moving about as fast as a cyclist.
+
+16
+00:01:31,500 --> 00:01:37,500
+But gravity never lets go. Every second, it falls a little faster.
+
+17
+00:01:41,000 --> 00:01:45,500
+Physics gives us an exact countdown.
+
+18
+00:01:46,000 --> 00:01:52,000
+From a standstill, the Moon would reach Earth in 4 days, 19 hours and 36 minutes.
+
+19
+00:01:52,500 --> 00:01:57,000
+But the fall is wildly uneven.
+
+20
+00:01:58,000 --> 00:02:03,000
+It takes almost four days just to cover the first half of the distance.
+
+21
+00:02:03,500 --> 00:02:09,000
+The last 100,000 kilometers take less than seven hours.
+
+22
+00:02:09,500 --> 00:02:14,500
+And the final 20,000? About twenty-six minutes.
+
+23
+00:02:15,000 --> 00:02:19,300
+So let’s live through it. Hour by hour.
+
+24
+00:02:25,500 --> 00:02:30,000
+Monday morning. The city wakes up like any other day.
+
+25
+00:02:30,500 --> 00:02:35,500
+The Moon is already almost 2,000 kilometers closer. Nobody can tell.
+
+26
+00:02:36,000 --> 00:02:41,500
+But astronomers still bounce lasers off mirrors left on the Moon by Apollo astronauts.
+
+27
+00:02:42,000 --> 00:02:46,500
+Within hours, they see the impossible.
+
+28
+00:02:47,000 --> 00:02:52,000
+The Moon has stopped circling us. And it is coming closer.
+
+29
+00:02:52,500 --> 00:02:57,000
+By evening, it is the only story on Earth.
+
+30
+00:02:59,500 --> 00:03:04,500
+Tuesday night. The Moon rises over the sea, a little too big.
+
+31
+00:03:05,000 --> 00:03:10,500
+It looks about 10% wider than a normal full moon, and a fifth brighter.
+
+32
+00:03:11,000 --> 00:03:15,500
+Crowds gather on the beach just to look at it.
+
+33
+00:03:17,000 --> 00:03:22,000
+It is beautiful. And it is now falling at almost 500 meters every second.
+
+34
+00:03:22,500 --> 00:03:28,000
+It weighs 73 quintillion tonnes.
+
+35
+00:03:28,500 --> 00:03:34,000
+No rocket, no bomb, nothing humanity has ever built could even nudge it.
+
+36
+00:03:40,500 --> 00:03:45,000
+Thursday. The Moon is now 240,000 kilometers away.
+
+37
+00:03:45,500 --> 00:03:51,000
+Tides exist because the Moon pulls harder on the near side of Earth than on the far side.
+
+38
+00:03:51,500 --> 00:03:56,500
+That difference grows with the cube of the distance.
+
+39
+00:03:57,000 --> 00:04:02,000
+Bring the Moon twice as close, and tides become eight times stronger.
+
+40
+00:04:02,500 --> 00:04:07,500
+Today, the tidal pull is already four times normal.
+
+41
+00:04:08,000 --> 00:04:13,500
+At high tide, the sea climbs past the beach, over the promenade, into the streets.
+
+42
+00:04:14,000 --> 00:04:20,500
+Six hours later, it drains away again — far beyond the harbor.
+
+43
+00:04:23,000 --> 00:04:28,000
+Friday, 4 a.m. The Moon is 160,000 kilometers away.
+
+44
+00:04:28,500 --> 00:04:33,500
+Tidal force: thirteen times normal.
+
+45
+00:04:34,000 --> 00:04:39,500
+In narrow bays, tides that once rose a few meters now rise tens of meters.
+
+46
+00:04:40,000 --> 00:04:45,000
+Every coastal city on Earth is flooding twice a day.
+
+47
+00:04:45,500 --> 00:04:51,000
+Hundreds of millions of people are moving inland, all at once.
+
+48
+00:04:51,500 --> 00:04:56,500
+But the ocean is not the only thing being pulled.
+
+49
+00:04:57,000 --> 00:05:02,000
+The solid ground beneath you is rising and falling too.
+
+50
+00:05:02,500 --> 00:05:08,000
+Rock flexes like water. Old faults begin to slip.
+
+51
+00:05:08,500 --> 00:05:14,000
+The first great earthquakes arrive just after sunrise.
+
+52
+00:05:25,500 --> 00:05:30,500
+Friday, noon. The Moon is 100,000 kilometers away.
+
+53
+00:05:31,000 --> 00:05:36,000
+Right now it is on the other side of the planet, below your feet.
+
+54
+00:05:36,500 --> 00:05:42,000
+Even from there, its pull is shaking the ground under you.
+
+55
+00:05:42,500 --> 00:05:48,000
+Tidal stress is fifty times normal. The crust is being kneaded like dough.
+
+56
+00:05:48,500 --> 00:05:54,000
+Volcanoes that slept for centuries erupt all along the Pacific Ring of Fire.
+
+57
+00:05:54,500 --> 00:05:59,500
+No building on Earth was designed for this.
+
+58
+00:06:00,000 --> 00:06:04,500
+And the Moon is still more than six hours away.
+
+59
+00:06:06,500 --> 00:06:11,500
+Friday evening. Sunset. And, one last time… moonrise.
+
+60
+00:06:12,000 --> 00:06:17,500
+It is 40,000 kilometers away. Nearly ten times wider than it used to be.
+
+61
+00:06:18,000 --> 00:06:23,500
+It reflects almost ninety times more sunlight than a normal full moon.
+
+62
+00:06:24,000 --> 00:06:30,000
+Under it, the ocean is being lifted into a mountain of water hundreds of meters high.
+
+63
+00:06:30,500 --> 00:06:36,000
+As Earth turns, that mountain sweeps toward every coast in its path.
+
+64
+00:06:36,500 --> 00:06:41,500
+The Moon is now falling at four kilometers per second.
+
+65
+00:06:42,000 --> 00:06:47,500
+The air is pulled too. Winds stronger than any hurricane tear across the land.
+
+66
+00:06:48,500 --> 00:06:54,000
+And then, something starts to happen to the Moon itself.
+
+67
+00:07:15,500 --> 00:07:20,500
+19:14. The Moon crosses 18,400 kilometers.
+
+68
+00:07:21,000 --> 00:07:25,000
+This is the Roche limit.
+
+69
+00:07:25,500 --> 00:07:31,500
+Here, Earth pulls on the Moon’s near side so much harder than on its far side…
+
+70
+00:07:32,000 --> 00:07:37,000
+…that the Moon’s own gravity can no longer hold it together.
+
+71
+00:07:37,500 --> 00:07:42,500
+Its four-billion-year-old crust begins to crack.
+
+72
+00:07:43,000 --> 00:07:47,500
+Molten rock glows through the fractures.
+
+73
+00:07:49,500 --> 00:07:54,000
+From space, it would look like this.
+
+74
+00:07:54,500 --> 00:08:00,000
+The Moon stretches, then shatters into a stream of fragments.
+
+75
+00:08:00,500 --> 00:08:06,000
+Some pieces are bigger than countries. All of them are still falling.
+
+76
+00:08:06,500 --> 00:08:12,500
+With no orbit left, the debris cannot form a ring like Saturn’s.
+
+77
+00:08:13,000 --> 00:08:18,000
+It has nowhere to go but down.
+
+78
+00:08:18,500 --> 00:08:23,500
+Impact: about twenty minutes from now.
+
+79
+00:08:30,500 --> 00:08:35,000
+The smallest fragments reach the atmosphere first.
+
+80
+00:08:35,500 --> 00:08:41,000
+They hit the air at almost ten kilometers per second, and the sky catches fire.
+
+81
+00:08:41,500 --> 00:08:46,500
+The atmosphere itself heats until it glows.
+
+82
+00:08:47,000 --> 00:08:52,500
+Above you, the largest pieces now fill half the sky.
+
+83
+00:08:53,500 --> 00:08:58,500
+19:36. Friday.
+
+84
+00:09:13,000 --> 00:09:18,500
+The impact releases about 3.6 × 10³⁰ joules of energy.
+
+85
+00:09:19,000 --> 00:09:24,500
+Nearly ten million times the asteroid that ended the dinosaurs.
+
+86
+00:09:25,000 --> 00:09:30,000
+The planet survives. Its surface does not.
+
+87
+00:09:30,500 --> 00:09:36,000
+Oceans boil away. The crust melts into a global sea of magma.
+
+88
+00:09:36,500 --> 00:09:41,500
+For thousands of years, Earth glows like a dim star.
+
+89
+00:09:42,000 --> 00:09:46,500
+Life, as we know it, is gone.
+
+90
+00:09:48,000 --> 00:09:53,000
+Strangely, this would not be the first time.
+
+91
+00:09:53,500 --> 00:09:59,500
+4.5 billion years ago, a planet the size of Mars slammed into the young Earth.
+
+92
+00:10:00,000 --> 00:10:05,500
+The debris from that collision came together… and became our Moon.
+
+93
+00:10:06,000 --> 00:10:11,000
+Born in fire. And in this story, returned in fire.
+
+94
+00:10:15,500 --> 00:10:20,000
+But you can relax.
+
+95
+00:10:20,500 --> 00:10:26,000
+In reality, nothing can stop the Moon in its orbit.
+
+96
+00:10:26,500 --> 00:10:32,000
+In fact, it is slowly drifting away from us — 3.8 centimeters every year.
+
+97
+00:10:32,500 --> 00:10:37,000
+About as fast as your fingernails grow.
+
+98
+00:10:39,000 --> 00:10:45,000
+What if… the Moon fell to Earth?
+
+99
+00:10:47,000 --> 00:11:04,000
+Thanks for watching. Which “what if” should we simulate next?
+
