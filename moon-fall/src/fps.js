@@ -93,7 +93,7 @@ export class Arms {
   }
   // pose: {pose: 'phone'|'run'|'shield', amt, sleeve}
   update(arms, mainCam, city, lt) {
-    this.cam.fov = mainCam.fov; this.cam.updateProjectionMatrix();
+    this.cam.fov = mainCam.fov; this.cam.aspect = mainCam.aspect; this.cam.updateProjectionMatrix();
     const vis = !!arms && (arms.amt ?? 1) > 0.001;
     this.R.visible = this.L.visible = this.phone.visible = false;
     if (!vis) return false;

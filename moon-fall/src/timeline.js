@@ -291,6 +291,14 @@ shot('thumb', 700, 710, 'city', {
     water: { level: 3.6, amp: 1.2 }, muddy: 0.4, crowd: { mode: 'none' }, traffic: 0, sweep: 0.3, collapse: 0.3, dust: 0.15, wind: 0.6, debris: 0.25, power: 0,
     meteors: 0.12, horizonFlashes: 0.25, horizonY: 610 }),
 });
+// Vertical (9:16) cover plate for TikTok/Shorts; render with QS='?w=1080&h=1920'.
+shot('thumbv', 720, 730, 'city', {
+  T: [115.25, 115.25], hud: false,
+  cam: [{ u: 0, p: [-1.2, 3.65, 34], l: [0, 235, -400], fov: 78 }],
+  st: () => ({ tod: 19.05, moonDir: dirEl(0, 26), moonBright: 60, moonK: 2.0, chaos: 0.3, moonHeat: 0.55, moonSep: 0, haloMul: 1.3,
+    water: { level: 1.2, amp: 1.6 }, muddy: 0.4, crowd: { mode: 'none' }, traffic: 0, sweep: 0.6, collapse: 0.5, dust: 0.15, wind: 0.6, debris: 0.3, power: 0,
+    meteors: 0.15 }),
+});
 shot('thumb2', 710, 720, 'space', {
   T: [115.45, 115.45], hud: false,
   cam: [{ u: 0, p: [24, 6, 1], l: MP(9000), fov: 40 }],

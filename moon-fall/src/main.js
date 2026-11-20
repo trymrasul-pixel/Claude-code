@@ -5,8 +5,8 @@ import { Arms, headMotion } from './fps.js';
 import { Space } from './space.js';
 import { SHOTS, CAPTIONS, CHAPTERS, DURATION } from './timeline.js';
 
-const W = 1920, H = 1080, FPS = 30;
 const params = new URLSearchParams(location.search);
+const W = +(params.get('w') ?? 1920), H = +(params.get('h') ?? 1080), FPS = 30;
 const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true, powerPreference: 'high-performance' });
 renderer.setPixelRatio(1); renderer.setSize(W, H);
 renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.05;
